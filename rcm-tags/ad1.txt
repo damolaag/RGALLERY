@@ -1,0 +1,58 @@
+ __    __   ________   __    __   _______
+|  \  |  \ |        \ |  \  |  \ |       \
+| $$\ | $$ | $$$$$$$$ | $$  | $$ | $$$$$$$\
+| $$$\| $$ | $$__      \$$\/  $$ | $$  | $$
+| $$$$\ $$ | $$  \      >$$  $$  | $$  | $$
+| $$\$$ $$ | $$$$$     /  $$$$\  | $$  | $$
+| $$ \$$$$ | $$_____  |  $$ \$$\ | $$__/ $$
+| $$  \$$$ | $$     \ | $$  | $$ | $$    $$
+ \$$   \$$  \$$$$$$$$  \$$   \$$  \$$$$$$$
+
+
+/**************************************************************/
+
+
+Publisher: Damola Agbonhin
+Organization: Dochase
+Campaign: New Campaign
+Campaign ID: LihXtxLERW1vctvP
+Campaign URL: https://app.nexd.com/c/LihXtxLERW1vctvP
+
+This file contains "1" creatives that should be inserted into a placement in your chosen platform
+
+If you need any help regarding the tags, please refer to our Help Center
+https: //support.nexd.com/
+
+
+/**** Creative 1. "MTN 5G (RCMg)" (300x250) ****/
+
+DSP: Dochase
+
+/---------------------URL FOR VERIFY--------------------/
+
+https://media.adcanvas.com/WPtDe27WUKp5/index.html
+
+This URL should not be used in any channel and kept only for reference
+The following tag should be inserted in either Third Party Placement or HTML placement.
+In case of problems or questions, please refer to the Help Center URL above or contact NEXD Support (support@nexd.com)
+
+/------------------COPY TAG BETWEEN LINES------------------/
+<ins class="adcads"
+	data-adc-id="WPtDe27WUKp5"
+	data-unit="WPtDe27WUKp5"
+	data-clickable="yes"
+	data-redir="yes"
+	data-click-tracker="[ADS_CLICK_URL]https://shop.mtn.ng/5g-broadband-router.html"
+	data-click-macro="[ADS_CLICK_URL]"
+	data-clicktag-first-media="[ADS_CLICK_URL]https://shop.mtn.ng/5g-broadband-router.html"
+	data-clicktag-logo="[ADS_CLICK_URL]https://dochaseadx.com/"
+	data-clicktag-second-media="[ADS_CLICK_URL]https://shop.mtn.ng/5g-broadband-router.html"
+	data-clicktag-third-media="[ADS_CLICK_URL]https://shop.mtn.ng/5g-broadband-router.html"
+	data-has-desktop="yes"
+	data-responsive="yes"
+	data-width="300"
+	data-height="250">
+	<script src="https://media.adcanvas.com/WPtDe27WUKp5/adtag.js" type="text/javascript" async></script>
+</ins>
+
+/**************************************************************/

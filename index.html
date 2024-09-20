@@ -3,45 +3,185 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dochase Rich Media Gallery</title>
+    <title>Rich Media Gallery</title>
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@1,900,700,500,300,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
   </head>
   <body>
     <header>
-      <h1>Dochase Rich Media Gallery</h1>
+      <div class="header-content">
+        <div class="logo">
+          <img src="images/dochase-logo.svg" alt="Dochase Logo" width="131" height="26">
+        </div>
+        <nav id="nav-menu">
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <button class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
     </header>
-    <div class="gallery-container">
-      <div class="card">
-        <div class="imgBx">
-          <img src="img1.jpg" alt="Image 1" />
-        </div>
-        <div class="content">
-          <h2>Image 1 Title</h2>
-          <p>Short description of Image 1</p>
-        </div>
-      </div>
-      
-      <div class="card">
-        <div class="imgBx">
-          <img src="img2.jpg" alt="Image 2" />
-        </div>
-        <div class="content">
-          <h2>Image 2 Title</h2>
-          <p>Short description of Image 2</p>
+    <main>
+      <h1>Rich Media Gallery</h1>
+      <div class="search-filter">
+        <input type="text" id="search" placeholder="Search...">
+        <div class="filter-buttons">
+          <button class="filter-btn" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="video">Video</button>
+          <button class="filter-btn" data-filter="interactive">Interactive</button>
+          <button class="filter-btn" data-filter="banner">Banner</button>
+          <!-- Add more filter buttons as needed -->
         </div>
       </div>
-      
-      <div class="card">
-        <div class="imgBx">
-          <img src="img3.jpg" alt="Image 3" />
+      <div class="gallery">
+        <!-- Existing cards -->
+        <div class="card" data-category="interactive">
+          <div class="rich-media-container">
+            <ins class="adcads"
+              data-adc-id="2WLZYhWtpbQo"
+              data-unit="2WLZYhWtpbQo"
+              data-clickable="yes"
+              data-redir="yes"
+              data-click-tracker="[ADS_CLICK_URL]"
+              data-click-macro="[ADS_CLICK_URL]"
+              data-has-desktop="yes"
+              data-responsive="yes"
+              data-width="300"
+              data-height="250">
+              <script src="https://media.adcanvas.com/2WLZYhWtpbQo/adtag.js" type="text/javascript" async></script>
+            </ins>
+          </div>
+          <h2>Interactive Ad 1</h2>
+          <p>Description of the first interactive ad</p>
         </div>
-        <div class="content">
-          <h2>Image 3 Title</h2>
-          <p>Short description of Image 3</p>
+        
+        <div class="card" data-category="interactive">
+          <div class="rich-media-container">
+            <ins class="adcads"
+              data-adc-id="k1mGbYhiNuDY"
+              data-unit="k1mGbYhiNuDY"
+              data-clickable="yes"
+              data-redir="yes"
+              data-click-tracker="[ADS_CLICK_URL]"
+              data-click-macro="[ADS_CLICK_URL]"
+              data-has-desktop="yes"
+              data-responsive="yes"
+              data-width="300"
+              data-height="250">
+              <script src="https://media.adcanvas.com/k1mGbYhiNuDY/adtag.js" type="text/javascript" async></script>
+            </ins>
+          </div>
+          <h2>Interactive Ad 2</h2>
+          <p>Description of the second interactive ad</p>
+        </div>
+        
+        <!-- New cards -->
+        <div class="card" data-category="video">
+          <div class="rich-media-container">
+            <!-- Placeholder for video content -->
+          </div>
+          <h2>Video Ad: Product Launch</h2>
+          <p>Exciting new product reveal video</p>
+        </div>
+        
+        <div class="card" data-category="banner">
+          <div class="rich-media-container">
+            <!-- Placeholder for banner content -->
+          </div>
+          <h2>Banner Ad: Summer Sale</h2>
+          <p>Colorful banner promoting seasonal discounts</p>
+        </div>
+        
+        <div class="card" data-category="interactive">
+          <div class="rich-media-container">
+            <!-- Placeholder for interactive content -->
+          </div>
+          <h2>Interactive Ad: Quiz Game</h2>
+          <p>Engaging quiz to test product knowledge</p>
+        </div>
+        
+        <div class="card" data-category="video">
+          <div class="rich-media-container">
+            <!-- Placeholder for video content -->
+          </div>
+          <h2>Video Ad: Brand Story</h2>
+          <p>Emotional narrative showcasing brand values</p>
+        </div>
+        
+        <div class="card" data-category="banner">
+          <div class="rich-media-container">
+            <!-- Placeholder for banner content -->
+          </div>
+          <h2>Banner Ad: New Collection</h2>
+          <p>Sleek banner featuring latest product line</p>
+        </div>
+        
+        <div class="card" data-category="interactive">
+          <div class="rich-media-container">
+            <!-- Placeholder for interactive content -->
+          </div>
+          <h2>Interactive Ad: Virtual Try-On</h2>
+          <p>AR experience for testing products virtually</p>
+        </div>
+        
+        <div class="card" data-category="video">
+          <div class="rich-media-container">
+            <!-- Placeholder for video content -->
+          </div>
+          <h2>Video Ad: How-To Guide</h2>
+          <p>Tutorial video demonstrating product usage</p>
+        </div>
+        
+        <div class="card" data-category="banner">
+          <div class="rich-media-container">
+            <!-- Placeholder for banner content -->
+          </div>
+          <h2>Banner Ad: Limited Offer</h2>
+          <p>Eye-catching banner with time-sensitive deal</p>
+        </div>
+        
+        <div class="card" data-category="interactive">
+          <div class="rich-media-container">
+            <!-- Placeholder for interactive content -->
+          </div>
+          <h2>Interactive Ad: Product Customizer</h2>
+          <p>Tool for personalizing product features</p>
+        </div>
+        
+        <div class="card" data-category="video">
+          <div class="rich-media-container">
+            <!-- Placeholder for video content -->
+          </div>
+          <h2>Video Ad: Customer Testimonial</h2>
+          <p>Real user sharing positive product experience</p>
         </div>
       </div>
-      
-      <!-- Add more cards as needed -->
-    </div>
+      <button id="load-more">Load More</button>
+    </main>
+    <footer>
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="images/dochase-logo.svg" alt="Dochase Logo" width="131" height="26">
+        </div>
+        <nav class="footer-nav">
+          <a href="#about">About</a>
+          <a href="#privacy">Privacy</a>
+          <a href="#terms">Terms</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <div class="footer-copyright">
+          &copy; 2023 Dochase
+        </div>
+      </div>
+    </footer>
+    <script src="script.js"></script>
   </body>
 </html>
