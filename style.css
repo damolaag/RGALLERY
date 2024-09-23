@@ -32,7 +32,7 @@ header {
 
 .logo img {
   height: 40px;
-  width: auto;
+  width: 120px; /* Adjusted width */
 }
 
 nav ul {
