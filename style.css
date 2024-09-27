@@ -155,7 +155,7 @@ h1 {
   position: relative;
   background-color: var(--medium-gray); /* Background color for the container */
   overflow: hidden; /* Prevents overflow */
-  margin-bottom: 0.5rem; /* Add a small space between the ad and the text */
+  margin-bottom: 0; /* Remove the margin to eliminate extra space */
   pointer-events: auto; /* Ensure pointer events are enabled */
 }
 
