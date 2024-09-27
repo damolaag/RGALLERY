@@ -147,17 +147,16 @@ h1 {
   padding-top: 0;
   padding-bottom: 0.75rem;
 }
-.main{
-  padding: 0 16px;
-}
+
 .rich-media-container {
   width: 100%;
   height: 0;
   padding-bottom: 83.33%; /* Maintains 300x250 aspect ratio */
   position: relative;
   background-color: var(--medium-gray); /* Background color for the container */
-  overflow: hidden; /* This will ensure the content doesn't spill out */
+  overflow: hidden; /* Prevents overflow */
   margin-bottom: 0.5rem; /* Add a small space between the ad and the text */
+  pointer-events: auto; /* Ensure pointer events are enabled */
 }
 
 .rich-media-container ins.adcads {
@@ -330,6 +329,7 @@ main {
   padding-bottom: 83.33%; /* Maintains 300x250 aspect ratio */
   position: relative;
   background-color: var(--white); /* Keep the ad container white */
+  overflow: hidden; /* Prevents overflow */
 }
 
 .rich-media-container ins.adcads {
