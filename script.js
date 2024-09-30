@@ -52,4 +52,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     searchInput.addEventListener('input', filterCards);
     layoutDropdown.addEventListener('change', filterCards);
+
+    function toggleNav() {
+        const nav = document.getElementById('nav-menu');
+        nav.classList.toggle('active');
+    }
 });

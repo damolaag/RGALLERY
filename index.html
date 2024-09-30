@@ -14,12 +14,60 @@
         <div class="logo">
           <img src="images/logo.svg" alt="Dochase Logo" width="131" height="26">
         </div>
+        <button class="nav-toggle" aria-label="Toggle navigation" onclick="toggleNav()">
+          <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-9 w-9" aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+            <path d="M4 6l16 0"/>
+            <path d="M4 12l16 0"/>
+            <path d="M4 18l16 0"/>
+          </svg>
+        </button>
         <nav id="nav-menu" role="navigation" aria-label="Main Navigation">
           <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="https://dochase.com/" target="_blank" rel="noopener noreferrer">Home</a></li>
+            <li>
+              <a href="https://dochase.com/products/" target="_blank" rel="noopener noreferrer">Products</a>
+              <span class="dropdown-arrow">
+                <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="ml-2 h-3 w-3 my-auto" aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                  <path d="M6 9l6 6l6 -6"/>
+                </svg>
+              </span>
+              <ul class="dropdown-menu">
+                <li><a href="https://dochase.com/products/#messaging" target="_blank" rel="noopener noreferrer">Messaging</a></li>
+                <li><a href="https://dochase.com/products/#chatbot" target="_blank" rel="noopener noreferrer">Chatbot</a></li>
+                <li><a href="https://dochase.com/products/#native-ads" target="_blank" rel="noopener noreferrer">Native Ads</a></li>
+                <li><a href="https://dochase.com/products/#click-to-whatsapp" target="_blank" rel="noopener noreferrer">Click to WhatsApp</a></li>
+                <li><a href="https://dochase.com/products/#click-to-ussd" target="_blank" rel="noopener noreferrer">Click to USSD</a></li>
+                <li><a href="https://dochase.com/products/#video-ads" target="_blank" rel="noopener noreferrer">Video Ads</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="https://dochase.com/solutions/" target="_blank" rel="noopener noreferrer">Solutions</a>
+              <span class="dropdown-arrow">
+                <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="ml-2 h-3 w-3 my-auto" aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                  <path d="M6 9l6 6l6 -6"/>
+                </svg>
+              </span>
+              <ul class="dropdown-menu">
+                <li><a href="https://dochase.com/solutions/#dsp" target="_blank" rel="noopener noreferrer">Programmatic Advertising</a></li>
+                <li><a href="https://dochase.com/solutions/#customer-acquisition" target="_blank" rel="noopener noreferrer">Lead Generation</a></li>
+                <li><a href="https://dochase.com/solutions/#customer-acquisition" target="_blank" rel="noopener noreferrer">App Installs</a></li>
+                <li><a href="https://dochase.com/solutions/#retargeting" target="_blank" rel="noopener noreferrer">Retargeting</a></li>
+                <li><a href="https://dochase.com/solutions/#customer-engagement" target="_blank" rel="noopener noreferrer">Customer Engagement</a></li>
+                <li><a href="https://dochase.com/solutions/#customer-acquisition" target="_blank" rel="noopener noreferrer">Web and App Traffic</a></li>
+              </ul>
+            </li>
+            <li><a href="https://dochase.com/success-stories/" target="_blank" rel="noopener noreferrer">Success Stories</a></li>
+            <div class="btn-container">
+              <li>
+                <button class="btn-contact" onclick="window.open('https://dochase.com/#form', '_blank')">Contact Us</button>
+              </li>
+              <li>
+                <button class="btn-login" onclick="window.open('https://dashboard.dochaseadx.com/index.aspx', '_blank')">Login</button>
+              </li>
+            </div>
           </ul>
         </nav>
       </div>

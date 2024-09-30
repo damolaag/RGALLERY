@@ -42,15 +42,26 @@ header {
   width: 120px; /* Adjusted width */
 }
 
+nav {
+  flex-grow: 1; /* Allow nav to take available space */
+  display: flex; /* Use flexbox for layout */
+  justify-content: center; /* Center items horizontally */
+}
+
 nav ul {
-  display: flex;
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
+  display: flex; /* Use flexbox for the list */
+  list-style: none; /* Remove default list styling */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margin */
 }
 
 nav ul li {
-  margin-left: 1.5rem;
+  margin: 0 15px; /* Space between items */
+}
+
+nav ul li a {
+  text-decoration: none; /* Remove underline from links */
+  color: #000; /* Link color */
 }
 
 nav a {
@@ -59,12 +70,12 @@ nav a {
   font-weight: 500;
   font-size: 1rem;
   padding: 0.5rem 0;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease; /* Change transition to color */
   position: relative;
 }
 
 nav a:hover, nav a.active {
-  color: var(--primary-blue);
+  color: #f92439; /* Change hover color to red */
 }
 
 nav a::after {
@@ -74,7 +85,7 @@ nav a::after {
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: var(--primary-blue);
+  background-color: transparent; /* Remove blue underline */
   transition: width 0.3s ease;
 }
 
@@ -99,19 +110,25 @@ h1 {
 }
 
 .filter-btn:hover, .filter-btn.active {
-  background-color: var(--primary-blue);
-  color: var(--white);
-  border-color: var(--primary-blue);
+  background-color: var(--light-gray); /* Keep background same */
+  color: #f92439; /* Change text color to red on hover */
+  border-color: var(--primary-blue); /* Keep border color same */
 }
 
 #load-more {
-  background-color: var(--primary-blue);
-  color: var(--white);
-  transition: background-color 0.3s ease;
+  background-color: #f92439; /* Same background color as header buttons */
+  color: white; /* Text color */
+  padding: 0.75rem 1.5rem; /* Padding */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease; /* Smooth transition */
+  display: block; /* Center the button */
+  margin: 2rem auto; /* Center the button horizontally */
 }
 
 #load-more:hover {
-  background-color: var(--secondary-blue);
+  background-color: #d81b2a; /* Darker shade on hover */
 }
 
 /* Card styling */
@@ -249,11 +266,12 @@ footer {
 /* Restored styles */
 .header-content {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* Space between logo, nav, and buttons */
   align-items: center;
-  padding: 0.5rem 1rem; /* Adjusted padding to change header height */
-  max-width: 1200px;
-  margin: 0 auto;
+  padding: 0.5rem 2rem; /* Increased padding for a wider header */
+  max-width: 1200px; /* Optional: Set a max width for the header */
+  margin: 0 auto; /* Center the header content */
+  width: 100%; /* Ensure the header takes full width */
 }
 
 nav ul {
@@ -357,13 +375,19 @@ main {
 }
 
 #load-more {
-  display: block;
-  margin: 2rem auto;
-  padding: 0.75rem 1.5rem;
-  border: none;
-  border-radius: 4px;
-  font-size: 1rem;
-  cursor: pointer;
+  background-color: #f92439; /* Same background color as header buttons */
+  color: white; /* Text color */
+  padding: 0.75rem 1.5rem; /* Padding */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease; /* Smooth transition */
+  display: block; /* Center the button */
+  margin: 2rem auto; /* Center the button horizontally */
+}
+
+#load-more:hover {
+  background-color: #d81b2a; /* Darker shade on hover */
 }
 
 @media screen and (max-width: 768px) {
@@ -433,4 +457,111 @@ main {
 
 #layout-dropdown:hover {
   border-color: var(--primary-blue); /* Change border color on hover */
+}
+
+.nav-toggle {
+  display: none; /* Hidden by default */
+  background: none;
+  border: none;
+  font-size: 1.5rem; /* Adjust size */
+  cursor: pointer;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: block; /* Show toggle button on small screens */
+  }
+
+  nav {
+    display: none; /* Hide nav by default */
+    flex-direction: column; /* Stack items vertically */
+    width: 100%; /* Full width */
+  }
+
+  nav.active {
+    display: flex; /* Show nav when active */
+  }
+
+  nav ul {
+    flex-direction: column; /* Stack links vertically */
+    padding: 0; /* Remove padding */
+  }
+
+  nav ul li {
+    margin: 0.5rem 0; /* Space between items */
+  }
+}
+
+.btn-login, .btn-contact {
+  background-color: #f92439; /* Button background color */
+  color: white; /* Text color */
+  border: none; /* No border */
+  padding: 0.5rem 1rem; /* Padding */
+  cursor: pointer; /* Pointer cursor on hover */
+  border-radius: 5px; /* Rounded corners */
+}
+
+.btn-login:hover, .btn-contact:hover {
+  background-color: #d81b2a; /* Darker shade on hover */
+  color: white; /* Keep text color white on hover */
+}
+
+.btn-container {
+  display: flex; /* Use flexbox for buttons */
+  gap: 10px; /* Space between buttons */
+  margin-left: auto; /* Push buttons to the far right */
+}
+
+.btn-login {
+  background-color: white; /* White background */
+  color: #f92439; /* Red text color */
+  border: 2px solid #f92439; /* Red border */
+  padding: 0.5rem 1rem; /* Padding */
+  cursor: pointer; /* Pointer cursor on hover */
+  border-radius: 5px; /* Rounded corners */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
+.btn-login:hover {
+  background-color: #f92439; /* Red background on hover */
+  color: white; /* White text on hover */
+}
+
+.dropdown-arrow {
+  margin-left: 5px; /* Space between text and arrow */
+  font-size: 0.8rem; /* Adjust size of the arrow */
+  transition: transform 0.3s ease; /* Smooth transition for hover effect */
+}
+
+nav ul li:hover .dropdown-arrow {
+  transform: rotate(180deg); /* Rotate arrow on hover */
+}
+
+.dropdown-menu {
+  display: none; /* Hide the dropdown by default */
+  position: absolute; /* Position it absolutely */
+  background-color: var(--white); /* Background color */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow for dropdown */
+  list-style: none; /* Remove default list styling */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margin */
+  z-index: 1000; /* Ensure it appears above other elements */
+}
+
+nav ul li:hover .dropdown-menu {
+  display: block; /* Show dropdown on hover */
+}
+
+.dropdown-menu li {
+  padding: 0.5rem 1rem; /* Padding for dropdown items */
+}
+
+.dropdown-menu li a {
+  color: var(--dark-gray); /* Text color for dropdown links */
+  text-decoration: none; /* Remove underline */
+}
+
+.dropdown-menu li a:hover {
+  color: #f92439; /* Change text color on hover */
 }
