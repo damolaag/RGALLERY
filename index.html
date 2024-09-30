@@ -14,154 +14,143 @@
         <div class="logo">
           <img src="images/logo.svg" alt="Dochase Logo" width="131" height="26">
         </div>
-        <nav id="nav-menu">
-          <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </nav>
-        <button class="hamburger" id="hamburger">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </div>
+        <!-- Desktop Navigation -->
+<nav id="nav-menu" role="navigation" aria-label="Main Navigation">
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+</div>
     </header>
     <main>
       <h1>Rich Media Gallery</h1>
       <div class="search-filter">
         <input type="text" id="search" placeholder="Search...">
-        <div class="filter-buttons">
-          <button class="filter-btn" data-filter="all">All</button>
-          <button class="filter-btn" data-filter="video">Video</button>
-          <button class="filter-btn" data-filter="interactive">Interactive</button>
-          <button class="filter-btn" data-filter="banner">Banner</button>
-          <!-- Add more filter buttons as needed -->
-        </div>
+        <select id="layout-dropdown">
+          <option value="">Select Layout</option>
+          <option value="3d-cube">3D Cube</option>
+          <option value="3d-prism">3D Prism</option>
+          <option value="parallax-cube">Parallax Cube</option>
+          <option value="video">Video</option>
+          <option value="blinds">Blinds</option>
+          <option value="blinds-swipe">Blinds Swipe</option>
+          <option value="carousel">Carousel</option>
+          <option value="carousel-splitscreen">Carousel Split Screen</option>
+          <option value="deck-of-cards">Deck of Cards</option>
+          <option value="drag-to-reveal">Drag to Reveal</option>
+          <option value="scratch">Scratch</option>
+          <option value="floating-object">Floating Object</option>
+          <option value="flip-book">Flip Book</option>
+        </select>
       </div>
       <div class="gallery">
-        <!-- Existing cards -->
-        <div class="card" data-category="interactive">
+        <!-- Existing cards with data-category attributes -->
+        <div class="card" data-category="3d-cube">
           <div class="rich-media-container">
-            <ins class="adcads"
-              data-adc-id="2WLZYhWtpbQo"
-              data-unit="2WLZYhWtpbQo"
-              data-clickable="yes"
-              data-redir="yes"
-              data-click-tracker="[ADS_CLICK_URL]"
-              data-click-macro="[ADS_CLICK_URL]"
-              data-has-desktop="yes"
-              data-responsive="yes"
-              data-width="300"
-              data-height="250">
-              <script src="https://media.adcanvas.com/2WLZYhWtpbQo/adtag.js" type="text/javascript" async></script>
-            </ins>
+            <!-- Placeholder for 3D Cube content -->
           </div>
-          <h2>Interactive Ad 1</h2>
-          <p>Description of the first interactive ad</p>
+          <h2>3D Cube</h2>
+          <p>A layout that rotates in 3D space, providing a dynamic viewing experience.</p>
         </div>
         
-        <div class="card" data-category="interactive">
+        <div class="card" data-category="3d-prism">
           <div class="rich-media-container">
-            <ins class="adcads"
-              data-adc-id="k1mGbYhiNuDY"
-              data-unit="k1mGbYhiNuDY"
-              data-clickable="yes"
-              data-redir="yes"
-              data-click-tracker="[ADS_CLICK_URL]"
-              data-click-macro="[ADS_CLICK_URL]"
-              data-has-desktop="yes"
-              data-responsive="yes"
-              data-width="300"
-              data-height="250">
-              <script src="https://media.adcanvas.com/k1mGbYhiNuDY/adtag.js" type="text/javascript" async></script>
-            </ins>
+            <!-- Placeholder for 3D Prism content -->
           </div>
-          <h2>Interactive Ad 2</h2>
-          <p>Description of the second interactive ad</p>
+          <h2>3D Prism</h2>
+          <p>A visually striking layout that showcases content in a prism-like effect.</p>
         </div>
         
-        <!-- New cards -->
-        <div class="card" data-category="video">
+        <div class="card" data-category="parallax-cube">
           <div class="rich-media-container">
-            <!-- Placeholder for video content -->
+            <!-- Placeholder for Parallax Cube content -->
           </div>
-          <h2>Video Ad: Product Launch</h2>
-          <p>Exciting new product reveal video</p>
-        </div>
-        
-        <div class="card" data-category="banner">
-          <div class="rich-media-container">
-            <!-- Placeholder for banner content -->
-          </div>
-          <h2>Banner Ad: Summer Sale</h2>
-          <p>Colorful banner promoting seasonal discounts</p>
-        </div>
-        
-        <div class="card" data-category="interactive">
-          <div class="rich-media-container">
-            <!-- Placeholder for interactive content -->
-          </div>
-          <h2>Interactive Ad: Quiz Game</h2>
-          <p>Engaging quiz to test product knowledge</p>
+          <h2>Parallax Cube</h2>
+          <p>A layout that creates a parallax effect with multiple assets on each side.</p>
         </div>
         
         <div class="card" data-category="video">
           <div class="rich-media-container">
             <!-- Placeholder for video content -->
           </div>
-          <h2>Video Ad: Brand Story</h2>
-          <p>Emotional narrative showcasing brand values</p>
+          <h2>Video</h2>
+          <p>A layout designed for showcasing video content effectively.</p>
         </div>
         
-        <div class="card" data-category="banner">
+        <div class="card" data-category="blinds">
           <div class="rich-media-container">
-            <!-- Placeholder for banner content -->
+            <!-- Placeholder for Blinds content -->
           </div>
-          <h2>Banner Ad: New Collection</h2>
-          <p>Sleek banner featuring latest product line</p>
+          <h2>Blinds</h2>
+          <p>A layout that mimics the opening and closing of blinds to reveal content.</p>
         </div>
         
-        <div class="card" data-category="interactive">
+        <div class="card" data-category="blinds-swipe">
           <div class="rich-media-container">
-            <!-- Placeholder for interactive content -->
+            <!-- Placeholder for Blinds Swipe content -->
           </div>
-          <h2>Interactive Ad: Virtual Try-On</h2>
-          <p>AR experience for testing products virtually</p>
+          <h2>Blinds Swipe</h2>
+          <p>A swipeable layout that reveals content like a set of blinds.</p>
         </div>
         
-        <div class="card" data-category="video">
+        <div class="card" data-category="carousel">
           <div class="rich-media-container">
-            <!-- Placeholder for video content -->
+            <!-- Placeholder for Carousel content -->
           </div>
-          <h2>Video Ad: How-To Guide</h2>
-          <p>Tutorial video demonstrating product usage</p>
+          <h2>Carousel</h2>
+          <p>A rotating carousel layout for displaying multiple items in a sequence.</p>
         </div>
         
-        <div class="card" data-category="banner">
+        <div class="card" data-category="carousel-splitscreen">
           <div class="rich-media-container">
-            <!-- Placeholder for banner content -->
+            <!-- Placeholder for Carousel Split Screen content -->
           </div>
-          <h2>Banner Ad: Limited Offer</h2>
-          <p>Eye-catching banner with time-sensitive deal</p>
+          <h2>Carousel Split Screen</h2>
+          <p>A layout that divides the screen to showcase two items simultaneously.</p>
         </div>
         
-        <div class="card" data-category="interactive">
+        <div class="card" data-category="deck-of-cards">
           <div class="rich-media-container">
-            <!-- Placeholder for interactive content -->
+            <!-- Placeholder for Deck of Cards content -->
           </div>
-          <h2>Interactive Ad: Product Customizer</h2>
-          <p>Tool for personalizing product features</p>
+          <h2>Deck of Cards</h2>
+          <p>A layout that presents content in a stack of cards that can be flipped.</p>
         </div>
         
-        <div class="card" data-category="video">
+        <div class="card" data-category="drag-to-reveal">
           <div class="rich-media-container">
-            <!-- Placeholder for video content -->
+            <!-- Placeholder for Drag to Reveal content -->
           </div>
-          <h2>Video Ad: Customer Testimonial</h2>
-          <p>Real user sharing positive product experience</p>
+          <h2>Drag to Reveal</h2>
+          <p>A layout that allows users to drag to uncover hidden content.</p>
+        </div>
+        
+        <div class="card" data-category="scratch">
+          <div class="rich-media-container">
+            <!-- Placeholder for Scratch content -->
+          </div>
+          <h2>Scratch</h2>
+          <p>A layout that simulates scratching off a surface to reveal content underneath.</p>
+        </div>
+        
+        <div class="card" data-category="floating-object">
+          <div class="rich-media-container">
+            <!-- Placeholder for Floating Object content -->
+          </div>
+          <h2>Floating Object</h2>
+          <p>A layout that gives the illusion of floating elements on the screen.</p>
+        </div>
+        
+        <div class="card" data-category="flip-book">
+          <div class="rich-media-container">
+            <!-- Placeholder for Flip Book content -->
+          </div>
+          <h2>Flip Book</h2>
+          <p>A layout that mimics the experience of flipping through a book.</p>
         </div>
       </div>
       <button id="load-more">Load More</button>

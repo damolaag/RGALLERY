@@ -125,6 +125,8 @@ h1 {
 
 .card:hover {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transform: scale(1.02); /* Slightly enlarge the card */
+  transition: transform 0.3s ease; /* Smooth transition */
 }
 
 .card h2, .card p {
@@ -155,7 +157,7 @@ h1 {
   position: relative;
   background-color: var(--medium-gray); /* Background color for the container */
   overflow: hidden; /* Prevents overflow */
-  margin-bottom: 0; /* Remove the margin to eliminate extra space */
+  margin-bottom: 0.5rem; /* Add a small space between the ad and the text */
   pointer-events: auto; /* Ensure pointer events are enabled */
 }
 
@@ -174,6 +176,7 @@ footer {
   color: var(--white);
   padding: 1rem 0;
   font-size: 0.9rem;
+  text-align: center; /* Center text in footer */
 }
 
 .footer-content {
@@ -299,6 +302,14 @@ main {
   padding: 0.5rem;
   border: 1px solid var(--text-gray);
   border-radius: 4px;
+  background-color: var(--white);
+  color: var(--dark-gray);
+  transition: border-color 0.3s ease;
+}
+
+#search:focus {
+  border-color: var(--primary-blue); /* Highlight border on focus */
+  outline: none; /* Remove default outline */
 }
 
 .filter-buttons {
@@ -383,12 +394,16 @@ main {
   }
 
   .search-filter {
-    flex-direction: column;
-    align-items: stretch;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: stretch; /* Stretch to full width */
   }
 
   #search {
-    margin-bottom: 1rem;
+    margin-bottom: 1rem; /* Add space below the search input */
+  }
+
+  #layout-dropdown {
+    margin-bottom: 1rem; /* Add space below the dropdown */
   }
 
   .filter-buttons {
@@ -405,4 +420,17 @@ main {
   .gallery {
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   }
+}
+
+#layout-dropdown {
+  padding: 0.5rem;
+  border: 1px solid var(--text-gray);
+  border-radius: 4px;
+  background-color: var(--white);
+  color: var(--dark-gray);
+  transition: border-color 0.3s ease;
+}
+
+#layout-dropdown:hover {
+  border-color: var(--primary-blue); /* Change border color on hover */
 }
