@@ -322,11 +322,17 @@ main {
   border-radius: 4px;
   background-color: var(--white);
   color: var(--dark-gray);
-  transition: border-color 0.3s ease;
+  transition: border-color 0.3s ease; /* Smooth transition for border color */
 }
 
+/* Search input hover style */
+#search:hover {
+  border-color: #f92439; /* Change border color to red on hover */
+}
+
+/* Search input focus style */
 #search:focus {
-  border-color: var(--primary-blue); /* Highlight border on focus */
+  border-color: #f92439; /* Change border color to red on focus */
   outline: none; /* Remove default outline */
 }
 
@@ -455,8 +461,10 @@ main {
   transition: border-color 0.3s ease;
 }
 
-#layout-dropdown:hover {
-  border-color: var(--primary-blue); /* Change border color on hover */
+#layout-dropdown:hover,
+#layout-dropdown:focus {
+  border-color: #f92439; /* Change border color to red on hover and focus */
+  outline: none; /* Remove default outline */
 }
 
 .nav-toggle {
@@ -500,11 +508,12 @@ main {
   padding: 0.5rem 1rem; /* Padding */
   cursor: pointer; /* Pointer cursor on hover */
   border-radius: 5px; /* Rounded corners */
+  transition: transform 0.3s ease; /* Smooth transition for transform */
 }
 
 .btn-login:hover, .btn-contact:hover {
-  background-color: #d81b2a; /* Darker shade on hover */
-  color: white; /* Keep text color white on hover */
+  transform: scale(1.1); /* Slightly enlarge the button */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
 }
 
 .btn-container {
@@ -520,12 +529,13 @@ main {
   padding: 0.5rem 1rem; /* Padding */
   cursor: pointer; /* Pointer cursor on hover */
   border-radius: 5px; /* Rounded corners */
-  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+  transition: transform 0.3s ease; /* Smooth transition for transform */
 }
 
+
 .btn-login:hover {
-  background-color: #f92439; /* Red background on hover */
-  color: white; /* White text on hover */
+  transform: scale(1.1); /* Slightly enlarge the button */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
 }
 
 .dropdown-arrow {
@@ -563,5 +573,36 @@ nav ul li:hover .dropdown-menu {
 }
 
 .dropdown-menu li a:hover {
-  color: #f92439; /* Change text color on hover */
+  color: #f92439; /* Change text color to red on hover */
+}
+
+.btn-contact, #load-more {
+  background-color: #f92439; /* Button background color */
+  color: white; /* Text color */
+  border: none; /* No border */
+  padding: 0.5rem 1rem; /* Padding */
+  cursor: pointer; /* Pointer cursor on hover */
+  border-radius: 5px; /* Rounded corners */
+  transition: transform 0.3s ease; /* Smooth transition for transform */
+}
+
+.btn-contact:hover, #load-more:hover {
+  transform: scale(1.1); /* Slightly enlarge the button */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+}
+
+/* Separate styles for the login button */
+.btn-login {
+  background-color: white; /* White background */
+  color: #f92439; /* Red text color */
+  border: 2px solid #f92439; /* Red border */
+  padding: 0.5rem 1rem; /* Padding */
+  cursor: pointer; /* Pointer cursor on hover */
+  border-radius: 5px; /* Rounded corners */
+  transition: transform 0.3s ease; /* Smooth transition for transform */
+}
+
+.btn-login:hover {
+  transform: scale(1.1); /* Slightly enlarge the button */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
 }
