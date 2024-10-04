@@ -138,6 +138,7 @@ h1 {
   transition: box-shadow 0.3s ease;
   border-radius: 4px;
   overflow: hidden;
+  width: 100%; /* Make cards responsive */
 }
 
 .card:hover {
