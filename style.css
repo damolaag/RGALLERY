@@ -407,3 +407,77 @@ nav ul li:hover .dropdown-menu {
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   }
 }
+
+/* Load More Button Styles */
+#load-more {
+    display: block;
+    margin: 2rem auto;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--red);
+    color: var(--white);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#load-more:hover {
+    background-color: var(--dark-red);
+    transform: translateY(-2px);
+}
+
+#load-more:disabled {
+    background-color: var(--text-gray);
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Responsive gallery layout */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+}
+
+/* Responsive card styles */
+.card {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+/* Load More button styles */
+#load-more {
+    display: block;
+    margin: 2rem auto;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--red);
+    color: var(--white);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#load-more:hover {
+    background-color: var(--dark-red);
+    transform: translateY(-2px);
+}
+
+#load-more:disabled {
+    background-color: var(--text-gray);
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+    .gallery {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+
+    #load-more {
+        width: 90%;
+        max-width: 300px;
+    }
+}
