@@ -62,4 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
         currentPage = 1;
         showItems();
     });
+
+    // Add touch events for iOS
+    document.addEventListener('touchstart', function() {}, false);
 });
