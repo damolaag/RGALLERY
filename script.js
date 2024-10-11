@@ -3,58 +3,78 @@ document.addEventListener('DOMContentLoaded', function() {
     const observer = lozad();
     observer.observe();
 
-    // Hamburger menu toggle (ensure these elements exist in your HTML)
-    const hamburger = document.getElementById('hamburger'); // Ensure this element exists
-    const mobileMenu = document.getElementById('mobile-menu'); // Ensure this element exists
-    const closeBtn = document.querySelector('.close-btn'); // Ensure this element exists
+    // Existing navigation toggle code
+    const navToggle = document.querySelector('.nav-toggle');
+    const navMenu = document.getElementById('nav-menu');
 
-    if (hamburger && mobileMenu && closeBtn) {
-        hamburger.addEventListener('click', () => {
-            mobileMenu.classList.toggle('active'); // Toggle the active class
-        });
-
-        closeBtn.addEventListener('click', () => {
-            mobileMenu.classList.remove('active'); // Close the menu
-        });
-
-        // Close mobile menu when clicking outside
-        window.addEventListener('click', (event) => {
-            if (event.target === mobileMenu) {
-                mobileMenu.classList.remove('active'); // Close the menu
-            }
-        });
+    if (navToggle && navMenu) {
+        navToggle.addEventListener('click', toggleNav);
     }
-
-    // Declare cards only once
-    const cards = document.querySelectorAll('.gallery .card');
-
-    // Search functionality
-    const searchInput = document.getElementById('search');
-    const layoutDropdown = document.getElementById('layout-dropdown');
-
-    const filterCards = () => {
-        const searchTerm = searchInput.value.toLowerCase();
-        const selectedLayout = layoutDropdown.value;
-
-        cards.forEach(card => {
-            const title = card.querySelector('h2').textContent.toLowerCase();
-            const description = card.querySelector('p').textContent.toLowerCase();
-            const matchesSearch = title.includes(searchTerm) || description.includes(searchTerm);
-            const matchesLayout = selectedLayout === '' || card.dataset.category === selectedLayout;
-
-            if (matchesSearch && matchesLayout) {
-                card.style.display = 'block'; // Show the card
-            } else {
-                card.style.display = 'none'; // Hide the card
-            }
-        });
-    };
-
-    searchInput.addEventListener('input', filterCards);
-    layoutDropdown.addEventListener('change', filterCards);
 
     function toggleNav() {
-        const nav = document.getElementById('nav-menu');
-        nav.classList.toggle('active');
+        navMenu.classList.toggle('active');
     }
+
+    // Search and filter functionality
+    const searchInput = document.getElementById('search');
+    const layoutDropdown = document.getElementById('layout-dropdown');
+    const gallery = document.getElementById('gallery');
+    const loadMoreButton = document.getElementById('load-more');
+
+    // Constants for gallery loading
+    const ITEMS_PER_PAGE = 8;
+    let currentPage = 1;
+
+    // Get all gallery items
+    const allItems = Array.from(gallery.querySelectorAll('.card'));
+    
+    // Function to show/hide items based on current page and filters
+    function showItems() {
+        const searchTerm = searchInput.value.toLowerCase();
+        const selectedLayout = layoutDropdown.value;
+        let visibleCount = 0;
+
+        allItems.forEach((item, index) => {
+            const title = item.querySelector('h2').textContent.toLowerCase();
+            const description = item.querySelector('p').textContent.toLowerCase();
+            const category = item.getAttribute('data-category');
+
+            let matchesSearch = title.includes(searchTerm) || description.includes(searchTerm);
+            let matchesCategory = selectedLayout === '' || category === selectedLayout;
+
+            if (matchesSearch && matchesCategory) {
+                if (visibleCount < currentPage * ITEMS_PER_PAGE) {
+                    item.style.display = 'block';
+                    visibleCount++;
+                } else {
+                    item.style.display = 'none';
+                }
+            } else {
+                item.style.display = 'none';
+            }
+        });
+
+        // Show/hide load more button
+        loadMoreButton.style.display = visibleCount < allItems.length ? 'block' : 'none';
+    }
+
+    // Initial load
+    showItems();
+
+    // Load more button click event
+    loadMoreButton.addEventListener('click', function() {
+        currentPage++;
+        showItems();
+        observer.observe(); // Refresh lazy loading for newly visible items
+    });
+
+    // Event listeners for search and filter
+    searchInput.addEventListener('input', function() {
+        currentPage = 1;
+        showItems();
+    });
+    layoutDropdown.addEventListener('change', function() {
+        currentPage = 1;
+        showItems();
+    });
 });
