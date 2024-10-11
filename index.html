@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Meta tags, title, and stylesheets -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rich Media Gallery</title>
@@ -9,12 +10,16 @@
     <script src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
   </head>
   <body>
+    <!-- Header Section -->
     <header>
       <div class="header-content">
+        <!-- Logo -->
         <div class="logo">
           <img src="images/logo.svg" alt="Dochase Logo" width="131" height="26">
         </div>
+        <!-- Mobile Navigation Toggle -->
         <button class="nav-toggle" aria-label="Toggle navigation" onclick="toggleNav()">
+          <!-- SVG for hamburger icon -->
           <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-9 w-9" aria-hidden="true" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
             <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
             <path d="M4 6l16 0"/>
@@ -22,7 +27,9 @@
             <path d="M4 18l16 0"/>
           </svg>
         </button>
+        <!-- Main Navigation -->
         <nav id="nav-menu" role="navigation" aria-label="Main Navigation">
+          <!-- Navigation menu items -->
           <ul>
             <li><a href="https://dochase.com/" target="_blank" rel="noopener noreferrer">Home</a></li>
             <li>
@@ -60,24 +67,24 @@
               </ul>
             </li>
             <li><a href="https://dochase.com/success-stories/" target="_blank" rel="noopener noreferrer">Success Stories</a></li>
-            <div class="btn-container">
-              <li>
-                <button class="btn-contact" onclick="window.open('https://dochase.com/#form', '_blank')">Contact Us</button>
-              </li>
-              <li>
-                <button class="btn-login" onclick="window.open('https://dashboard.dochaseadx.com/index.aspx', '_blank')">Login</button>
-              </li>
-            </div>
           </ul>
         </nav>
+        <!-- Header Buttons -->
+        <div class="button-group">
+          <button class="btn-contact" onclick="window.open('https://dochase.com/#form', '_blank')">Contact Us</button>
+          <button class="btn-login" onclick="window.open('https://dashboard.dochaseadx.com/index.aspx', '_blank')">Login</button>
+        </div>
       </div>
     </header>
+    <!-- Main Content Section -->
     <main>
       <h1>Rich Media Gallery</h1>
+      <!-- Search and Filter Section -->
       <div class="search-filter">
         <input type="text" id="search" placeholder="Search...">
         <select id="layout-dropdown">
           <option value="">Select Layout</option>
+          <!-- Layout options -->
           <option value="3d-cube">3D Cube</option>
           <option value="3d-prism">3D Prism</option>
           <option value="parallax-cube">Parallax Cube</option>
@@ -92,7 +99,9 @@
           <option value="flip-book">Flip Book</option>
         </select>
       </div>
+      <!-- Gallery Section -->
       <div class="gallery">
+        <!-- Gallery items -->
         <div class="card" data-category="3d-cube">
           <div class="rich-media-container">
             <!-- Added ad tag for 3D Cube 1 -->
@@ -459,24 +468,30 @@
           <p>A layout that mimics the experience of flipping through a book.</p>
         </div>
       </div>
+      <!-- Load More Button -->
       <button id="load-more">Load More</button>
     </main>
+    <!-- Footer Section -->
     <footer>
       <div class="footer-content">
+        <!-- Footer Logo -->
         <div class="footer-logo">
           <img src="images/dochase-logo.svg" alt="Dochase Logo" width="131" height="26">
         </div>
+        <!-- Footer Navigation -->
         <nav class="footer-nav">
           <a href="#about">About</a>
           <a href="#privacy">Privacy</a>
           <a href="#terms">Terms</a>
           <a href="#contact">Contact</a>
         </nav>
+        <!-- Copyright Information -->
         <div class="footer-copyright">
           &copy; 2024 Dochase
         </div>
       </div>
     </footer>
+    <!-- JavaScript -->
     <script src="script.js"></script>
   </body>
 </html>

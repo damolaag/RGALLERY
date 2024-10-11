@@ -1,3 +1,4 @@
+/* CSS Variables */
 :root {
   --primary-blue: #0066FF;
   --secondary-blue: #3385FF;
@@ -7,61 +8,70 @@
   --light-gray: #F8F9FA;
   --text-gray: #6C757D;
   --dark-gray: #343A40;
-  --medium-gray: #E9ECEF; /* New variable for rich media container background */
-  --dochase-green: #66CC33; /* Add this new color variable */
-  --dochase-dark-green: #2E8B57; /* New darker green color */
-  --footer-blue: #0C3B87; /* New, slightly lighter blue for the footer */
+  --medium-gray: #E9ECEF;
+  --dochase-green: #66CC33;
+  --dochase-dark-green: #2E8B57;
+  --footer-blue: #0C3B87;
   --footer-gray: #333333;
   --footer-charcoal: #36454F;
+  --red: #f92439;
+  --dark-red: #d81b2a;
 }
 
+/* Global Styles */
 body {
   font-family: 'Satoshi', sans-serif;
   background-color: var(--white);
   color: var(--dark-gray);
   line-height: 1.6;
-}
-
-*{
+  overflow-x: hidden;
+  position: relative;
+  width: 100%;
   margin: 0;
-  padding: 0;
-  box-sizing: border-box;
 }
 
+/* Header Styles */
 header {
   background-color: var(--white);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
   z-index: 1000;
-  padding: 0.5rem 0; /* Adjusted padding to change header height */
+  width: 100%;
+  left: 0;
+  right: 0;
+}
+
+.header-content {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .logo img {
   height: 40px;
-  width: 120px; /* Adjusted width */
+  width: 120px;
 }
 
+/* Navigation Styles */
 nav {
-  flex-grow: 1; /* Allow nav to take available space */
-  display: flex; /* Use flexbox for layout */
-  justify-content: center; /* Center items horizontally */
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
 }
 
 nav ul {
-  display: flex; /* Use flexbox for the list */
-  list-style: none; /* Remove default list styling */
-  padding: 0; /* Remove padding */
-  margin: 0; /* Remove margin */
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 nav ul li {
-  margin: 0 15px; /* Space between items */
-}
-
-nav ul li a {
-  text-decoration: none; /* Remove underline from links */
-  color: #000; /* Link color */
+  margin: 0 15px;
 }
 
 nav a {
@@ -70,12 +80,12 @@ nav a {
   font-weight: 500;
   font-size: 1rem;
   padding: 0.5rem 0;
-  transition: color 0.3s ease; /* Change transition to color */
+  transition: color 0.3s ease;
   position: relative;
 }
 
 nav a:hover, nav a.active {
-  color: #f92439; /* Change hover color to red */
+  color: var(--red);
 }
 
 nav a::after {
@@ -85,7 +95,7 @@ nav a::after {
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: transparent; /* Remove blue underline */
+  background-color: transparent;
   transition: width 0.3s ease;
 }
 
@@ -93,58 +103,96 @@ nav a:hover::after, nav a.active::after {
   width: 100%;
 }
 
-.hamburger span {
-  background-color: var(--dark-gray);
+/* Button Styles */
+.button-group {
+  margin-left: auto;
+  display: flex;
+  gap: 10px;
 }
 
-/* Main content */
-h1 {
-  color: var(--dark-blue);
+.btn-contact, .btn-login, #load-more {
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-.filter-btn {
-  background-color: var(--light-gray);
-  color: var(--dark-gray);
-  border: 1px solid var(--text-gray);
-  transition: all 0.3s ease;
+.btn-contact, #load-more {
+  background-color: var(--red);
+  color: var(--white);
+  border: none;
 }
 
-.filter-btn:hover, .filter-btn.active {
-  background-color: var(--light-gray); /* Keep background same */
-  color: #f92439; /* Change text color to red on hover */
-  border-color: var(--primary-blue); /* Keep border color same */
+.btn-login {
+  background-color: var(--white);
+  color: var(--red);
+  border: 2px solid var(--red);
 }
 
-#load-more {
-  background-color: #f92439; /* Same background color as header buttons */
-  color: white; /* Text color */
-  padding: 0.75rem 1.5rem; /* Padding */
-  border: none; /* No border */
-  border-radius: 5px; /* Rounded corners */
-  cursor: pointer; /* Pointer cursor on hover */
-  transition: background-color 0.3s ease; /* Smooth transition */
-  display: block; /* Center the button */
-  margin: 2rem auto; /* Center the button horizontally */
+.btn-contact:hover, .btn-login:hover, #load-more:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 #load-more:hover {
-  background-color: #d81b2a; /* Darker shade on hover */
+  background-color: var(--dark-red);
 }
 
-/* Card styling */
+/* Main Content Styles */
+main {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Search and Filter Styles */
+.search-filter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  gap: 1rem;
+}
+
+#search, #layout-dropdown {
+  padding: 0.5rem;
+  border: 1px solid var(--text-gray);
+  border-radius: 4px;
+  background-color: var(--white);
+  color: var(--dark-gray);
+  transition: border-color 0.3s ease;
+}
+
+#search {
+  flex: 1;
+  min-width: 200px;
+}
+
+#search:hover, #search:focus, #layout-dropdown:hover, #layout-dropdown:focus {
+  border-color: var(--red);
+  outline: none;
+}
+
+/* Gallery Styles */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
 .card {
   background-color: var(--light-gray);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.3s ease;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
   border-radius: 4px;
   overflow: hidden;
-  width: 100%; /* Make cards responsive */
+  width: 100%;
 }
 
 .card:hover {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  transform: scale(1.02); /* Slightly enlarge the card */
-  transition: transform 0.3s ease; /* Smooth transition */
+  transform: scale(1.02);
 }
 
 .card h2, .card p {
@@ -164,19 +212,19 @@ h1 {
   color: var(--text-gray);
   font-weight: 400;
   font-size: 0.9rem;
-  padding-top: 0;
   padding-bottom: 0.75rem;
 }
 
+/* Rich Media Container Styles */
 .rich-media-container {
   width: 100%;
   height: 0;
-  padding-bottom: 83.33%; /* Maintains 300x250 aspect ratio */
+  padding-bottom: 83.33%;
   position: relative;
-  background-color: var(--medium-gray); /* Background color for the container */
-  overflow: hidden; /* Prevents overflow */
-  margin-bottom: 0.5rem; /* Add a small space between the ad and the text */
-  pointer-events: auto; /* Ensure pointer events are enabled */
+  background-color: var(--white);
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+  pointer-events: auto;
 }
 
 .rich-media-container ins.adcads {
@@ -185,20 +233,20 @@ h1 {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: transparent; /* This ensures the ad content is visible */
+  background-color: transparent;
 }
 
-/* Footer */
+/* Footer Styles */
 footer {
   background-color: var(--footer-gray);
   color: var(--white);
   padding: 1rem 0;
   font-size: 0.9rem;
-  text-align: center; /* Center text in footer */
+  text-align: center;
 }
 
 .footer-content {
-  max-width: 1200px;
+  max-width: 1300px;
   width: 95%;
   margin: 0 auto;
   display: flex;
@@ -232,7 +280,96 @@ footer {
   margin-left: 2rem;
 }
 
+/* Dropdown Styles */
+.dropdown-arrow {
+  margin-left: 5px;
+  font-size: 0.8rem;
+  transition: transform 0.3s ease;
+}
+
+nav ul li:hover .dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: var(--white);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  z-index: 1000;
+}
+
+nav ul li:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu li {
+  padding: 0.5rem 1rem;
+}
+
+.dropdown-menu li a {
+  color: var(--dark-gray);
+}
+
+.dropdown-menu li a:hover {
+  color: var(--red);
+}
+
+/* Mobile Navigation Styles */
+.hamburger, .nav-toggle {
+  display: none;
+}
+
+/* Media Queries */
 @media screen and (max-width: 768px) {
+  /* Mobile styles */
+  .hamburger, .nav-toggle {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+
+  nav, .button-group {
+    display: none;
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  nav.active {
+    display: block;
+  }
+
+  nav ul {
+    flex-direction: column;
+  }
+
+  nav ul li {
+    margin: 0.5rem 0;
+  }
+
+  .search-filter {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  #search, #layout-dropdown {
+    margin-bottom: 1rem;
+  }
+
+  .filter-buttons {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .filter-btn {
+    margin: 0.25rem;
+  }
+
   footer {
     padding: 1.5rem 0;
   }
@@ -264,346 +401,9 @@ footer {
   }
 }
 
-/* Restored styles */
-.header-content {
-  display: flex;
-  justify-content: space-between; /* Space between logo, nav, and buttons */
-  align-items: center;
-  padding: 0.5rem 2rem; /* Increased padding for a wider header */
-  max-width: 1200px; /* Optional: Set a max width for the header */
-  margin: 0 auto; /* Center the header content */
-  width: 100%; /* Ensure the header takes full width */
-}
-
-nav ul {
-  display: flex;
-  list-style-type: none;
-  padding: 0;
-}
-
-nav ul li {
-  margin-left: 1rem;
-}
-
-.hamburger {
-  display: none;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-.hamburger span {
-  display: block;
-  width: 25px;
-  height: 3px;
-  margin: 5px 0;
-}
-
-main {
-  max-width: 1200px;
-  width: 95%;
-  margin: 2rem auto;
-  padding: 0;
-}
-
-.search-filter {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 2rem;
-  gap: 1rem;
-}
-
-#search {
-  flex: 1;
-  min-width: 200px;
-  padding: 0.5rem;
-  border: 1px solid var(--text-gray);
-  border-radius: 4px;
-  background-color: var(--white);
-  color: var(--dark-gray);
-  transition: border-color 0.3s ease; /* Smooth transition for border color */
-}
-
-/* Search input hover style */
-#search:hover {
-  border-color: #f92439; /* Change border color to red on hover */
-}
-
-/* Search input focus style */
-#search:focus {
-  border-color: #f92439; /* Change border color to red on focus */
-  outline: none; /* Remove default outline */
-}
-
-.filter-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
-.filter-btn {
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-}
-
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 1.5rem;
-}
-
-.card {
-  border-radius: 4px;
-  overflow: hidden;
-}
-
-.rich-media-container {
-  width: 100%;
-  height: 0;
-  padding-bottom: 83.33%; /* Maintains 300x250 aspect ratio */
-  position: relative;
-  background-color: var(--white); /* Keep the ad container white */
-  overflow: hidden; /* Prevents overflow */
-}
-
-.rich-media-container ins.adcads {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.card h2, .card p {
-  padding: 0 1rem;
-  margin: 0;
-}
-
-#load-more {
-  background-color: #f92439; /* Same background color as header buttons */
-  color: white; /* Text color */
-  padding: 0.75rem 1.5rem; /* Padding */
-  border: none; /* No border */
-  border-radius: 5px; /* Rounded corners */
-  cursor: pointer; /* Pointer cursor on hover */
-  transition: background-color 0.3s ease; /* Smooth transition */
-  display: block; /* Center the button */
-  margin: 2rem auto; /* Center the button horizontally */
-}
-
-#load-more:hover {
-  background-color: #d81b2a; /* Darker shade on hover */
-}
-
-@media screen and (max-width: 768px) {
-  .header-content {
-    flex-wrap: wrap;
-  }
-
-  nav {
-    display: none;
-    width: 100%;
-    margin-top: 1rem;
-  }
-
-  nav.active {
-    display: block;
-  }
-
-  nav ul {
-    flex-direction: column;
-  }
-
-  nav ul li {
-    margin: 0.5rem 0;
-  }
-
-  .hamburger {
-    display: block;
-  }
-
-  .search-filter {
-    flex-direction: column; /* Stack elements vertically */
-    align-items: stretch; /* Stretch to full width */
-  }
-
-  #search {
-    margin-bottom: 1rem; /* Add space below the search input */
-  }
-
-  #layout-dropdown {
-    margin-bottom: 1rem; /* Add space below the dropdown */
-  }
-
-  .filter-buttons {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .filter-btn {
-    margin: 0.25rem;
-  }
-}
-
 @media screen and (min-width: 769px) and (max-width: 1024px) {
+  /* Tablet styles */
   .gallery {
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   }
-}
-
-#layout-dropdown {
-  padding: 0.5rem;
-  border: 1px solid var(--text-gray);
-  border-radius: 4px;
-  background-color: var(--white);
-  color: var(--dark-gray);
-  transition: border-color 0.3s ease;
-}
-
-#layout-dropdown:hover,
-#layout-dropdown:focus {
-  border-color: #f92439; /* Change border color to red on hover and focus */
-  outline: none; /* Remove default outline */
-}
-
-.nav-toggle {
-  display: none; /* Hidden by default */
-  background: none;
-  border: none;
-  font-size: 1.5rem; /* Adjust size */
-  cursor: pointer;
-}
-
-/* Responsive styles */
-@media (max-width: 768px) {
-  .nav-toggle {
-    display: block; /* Show toggle button on small screens */
-  }
-
-  nav {
-    display: none; /* Hide nav by default */
-    flex-direction: column; /* Stack items vertically */
-    width: 100%; /* Full width */
-  }
-
-  nav.active {
-    display: flex; /* Show nav when active */
-  }
-
-  nav ul {
-    flex-direction: column; /* Stack links vertically */
-    padding: 0; /* Remove padding */
-  }
-
-  nav ul li {
-    margin: 0.5rem 0; /* Space between items */
-  }
-}
-
-.btn-login, .btn-contact {
-  background-color: #f92439; /* Button background color */
-  color: white; /* Text color */
-  border: none; /* No border */
-  padding: 0.5rem 1rem; /* Padding */
-  cursor: pointer; /* Pointer cursor on hover */
-  border-radius: 5px; /* Rounded corners */
-  transition: transform 0.3s ease; /* Smooth transition for transform */
-}
-
-.btn-login:hover, .btn-contact:hover {
-  transform: scale(1.1); /* Slightly enlarge the button */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
-}
-
-.btn-container {
-  display: flex; /* Use flexbox for buttons */
-  gap: 10px; /* Space between buttons */
-  margin-left: auto; /* Push buttons to the far right */
-}
-
-.btn-login {
-  background-color: white; /* White background */
-  color: #f92439; /* Red text color */
-  border: 2px solid #f92439; /* Red border */
-  padding: 0.5rem 1rem; /* Padding */
-  cursor: pointer; /* Pointer cursor on hover */
-  border-radius: 5px; /* Rounded corners */
-  transition: transform 0.3s ease; /* Smooth transition for transform */
-}
-
-
-.btn-login:hover {
-  transform: scale(1.1); /* Slightly enlarge the button */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
-}
-
-.dropdown-arrow {
-  margin-left: 5px; /* Space between text and arrow */
-  font-size: 0.8rem; /* Adjust size of the arrow */
-  transition: transform 0.3s ease; /* Smooth transition for hover effect */
-}
-
-nav ul li:hover .dropdown-arrow {
-  transform: rotate(180deg); /* Rotate arrow on hover */
-}
-
-.dropdown-menu {
-  display: none; /* Hide the dropdown by default */
-  position: absolute; /* Position it absolutely */
-  background-color: var(--white); /* Background color */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow for dropdown */
-  list-style: none; /* Remove default list styling */
-  padding: 0; /* Remove padding */
-  margin: 0; /* Remove margin */
-  z-index: 1000; /* Ensure it appears above other elements */
-}
-
-nav ul li:hover .dropdown-menu {
-  display: block; /* Show dropdown on hover */
-}
-
-.dropdown-menu li {
-  padding: 0.5rem 1rem; /* Padding for dropdown items */
-}
-
-.dropdown-menu li a {
-  color: var(--dark-gray); /* Text color for dropdown links */
-  text-decoration: none; /* Remove underline */
-}
-
-.dropdown-menu li a:hover {
-  color: #f92439; /* Change text color to red on hover */
-}
-
-.btn-contact, #load-more {
-  background-color: #f92439; /* Button background color */
-  color: white; /* Text color */
-  border: none; /* No border */
-  padding: 0.5rem 1rem; /* Padding */
-  cursor: pointer; /* Pointer cursor on hover */
-  border-radius: 5px; /* Rounded corners */
-  transition: transform 0.3s ease; /* Smooth transition for transform */
-}
-
-.btn-contact:hover, #load-more:hover {
-  transform: scale(1.1); /* Slightly enlarge the button */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
-}
-
-/* Separate styles for the login button */
-.btn-login {
-  background-color: white; /* White background */
-  color: #f92439; /* Red text color */
-  border: 2px solid #f92439; /* Red border */
-  padding: 0.5rem 1rem; /* Padding */
-  cursor: pointer; /* Pointer cursor on hover */
-  border-radius: 5px; /* Rounded corners */
-  transition: transform 0.3s ease; /* Smooth transition for transform */
-}
-
-.btn-login:hover {
-  transform: scale(1.1); /* Slightly enlarge the button */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
 }
