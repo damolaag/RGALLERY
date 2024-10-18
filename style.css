@@ -387,14 +387,13 @@ nav ul li:hover .dropdown-menu {
   }
 
   .footer-nav {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     gap: 1rem;
   }
 
   .footer-nav a {
-    margin: 0;
+    margin-left: 0;
   }
 
   .footer-copyright {
@@ -420,6 +419,9 @@ nav ul li:hover .dropdown-menu {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
+    grid-column: 1 / -1; /* Span all columns */
+    justify-self: center; /* Center horizontally within the grid */
+    width: fit-content; /* Adjust width to content */
 }
 
 #load-more:hover {
@@ -435,6 +437,14 @@ nav ul li:hover .dropdown-menu {
 
 /* Consolidated Gallery Styles */
 .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+}
+
+/* Load More Container */
+.load-more-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 1rem;
