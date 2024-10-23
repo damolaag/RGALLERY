@@ -24,7 +24,7 @@ body {
   background-color: var(--white);
   color: var(--dark-gray);
   line-height: 1.6;
-  overflow-x: hidden;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
   position: relative;
   width: 100%;
   margin: 0;
@@ -34,7 +34,7 @@ body {
 header {
   background-color: var(--white);
   box-shadow: none;
-  position: sticky;
+  position: fixed; /* Change from sticky to fixed */
   top: 0;
   z-index: 1000;
   width: 100%;
@@ -157,6 +157,7 @@ main {
   max-width: 1300px;
   margin: 0 auto;
   padding: 20px;
+  padding-top: 100px; /* Match this to the height of your header */
 }
 
 /* Search and Filter Styles */
@@ -255,7 +256,7 @@ main {
 footer {
   background-color: var(--footer-gray);
   color: var(--white);
-  padding: 2rem 0 1rem;
+  padding: 2rem 0; /* Increase top and bottom padding */
   font-size: 0.9rem;
 }
 
@@ -265,7 +266,7 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  padding: 0 2rem;
+  padding: 0 2rem; /* Keep side padding */
 }
 
 .footer-left {
@@ -278,16 +279,17 @@ footer {
   flex: 2;
   display: flex;
   justify-content: flex-start; /* Changed from space-between to flex-start */
-  gap: 1rem; /* Reduced from 1rem to 0.5rem for desktop */
+  gap: 0.25rem; /* Reduced from 0.5rem to 0.25rem for tighter spacing */
 }
 
 .footer-column {
-  flex: 0 1 auto; /* Changed from flex: 1 to allow columns to size based on content */
-  margin-right: 2rem; /* Added margin-right for spacing between columns */
+  flex: 1; /* Allow columns to grow equally */
+  margin-right: 0.1rem; /* Reduced from 0.25rem to 0.1rem for tighter spacing */
+  margin-bottom: 1rem; /* Maintain bottom margin for spacing */
 }
 
 .footer-section {
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem; /* Increase bottom margin for spacing */
 }
 
 .footer-section h3 {
@@ -301,7 +303,7 @@ footer {
 }
 
 .footer-section li {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.25rem; /* Reduced from 0.5rem to 0.25rem for tighter spacing */
 }
 
 .footer-section a {
@@ -867,3 +869,28 @@ nav ul li:hover .dropdown-menu {
     margin: 0; /* Remove any margin */
   }
 }
+
+* {
+    box-sizing: border-box; /* Ensure padding and borders are included in element's total width and height */
+}
+
+html, body {
+    width: 100%; /* Ensure the body takes full width */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .footer-content {
+    flex-direction: column; /* Stack columns on mobile */
+    align-items: center; /* Center align items */
+    padding: 1rem; /* Adjust padding for mobile */
+  }
+
+  .footer-column {
+    margin-right: 0; /* Remove right margin on mobile */
+    margin-bottom: 1rem; /* Add bottom margin for spacing */
+  }
+}
+
