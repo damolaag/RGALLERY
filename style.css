@@ -33,34 +33,41 @@ body {
 /* Header Styles */
 header {
   background-color: var(--white);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: none;
   position: sticky;
   top: 0;
   z-index: 1000;
   width: 100%;
   left: 0;
   right: 0;
+  height: 100px;
 }
 
 .header-content {
   max-width: 1300px;
   margin: 0 auto;
-  padding: 0.5rem 2rem;
+  padding: 0 2rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
+  height: 100%;
+}
+
+.logo {
+  margin-right: auto;
 }
 
 .logo img {
-  height: 40px;
-  width: 120px;
+  height: 25px;
+  width: auto;
 }
 
 /* Navigation Styles */
 nav {
-  flex-grow: 1;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
+  margin-right: 2rem;
+  margin-left: auto;
 }
 
 nav ul {
@@ -77,9 +84,9 @@ nav ul li {
 nav a {
   color: var(--dark-gray);
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 440;
   font-size: 1rem;
-  padding: 0.5rem 0;
+  padding: 0.75rem 0;
   transition: color 0.3s ease;
   position: relative;
 }
@@ -103,18 +110,25 @@ nav a:hover::after, nav a.active::after {
   width: 100%;
 }
 
-/* Button Styles */
+/* Button group styles */
 .button-group {
-  margin-left: auto;
   display: flex;
-  gap: 10px;
+  gap: 20px; /* Increased from 15px to 20px */
+  margin-left: 2rem;
 }
 
+/* Button styles */
 .btn-contact, .btn-login, #load-more {
-  padding: 0.5rem 1rem;
+  padding: 0.75rem 2rem;
+  min-width: 160px;
   border-radius: 5px;
   cursor: pointer;
   transition: transform 0.3s ease, background-color 0.3s ease;
+  font-size: 1rem;
+  font-family: 'Satoshi', sans-serif;
+  font-weight: 700;
+  text-align: center;
+  display: inline-block;
 }
 
 .btn-contact, #load-more {
@@ -126,7 +140,7 @@ nav a:hover::after, nav a.active::after {
 .btn-login {
   background-color: var(--white);
   color: var(--red);
-  border: 2px solid var(--red);
+  border: 1px solid var(--red);
 }
 
 .btn-contact:hover, .btn-login:hover, #load-more:hover {
@@ -241,44 +255,180 @@ main {
 footer {
   background-color: var(--footer-gray);
   color: var(--white);
-  padding: 1rem 0;
+  padding: 2rem 0 1rem;
   font-size: 0.9rem;
-  text-align: center;
 }
 
 .footer-content {
   max-width: 1300px;
-  width: 95%;
   margin: 0 auto;
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
-  align-items: center;
-  padding: 0;
+  align-items: flex-start;
+  padding: 0 2rem;
 }
 
-.footer-logo img {
-  height: 24px;
-  width: auto;
+.footer-left {
+  flex: 0 0 300px;
+  margin-right: 2rem;
+  margin-top: 1rem;
 }
 
-.footer-nav {
+.footer-right {
+  flex: 2;
   display: flex;
+  justify-content: flex-start; /* Changed from space-between to flex-start */
+  gap: 1rem; /* Reduced from 1rem to 0.5rem for desktop */
 }
 
-.footer-nav a {
+.footer-column {
+  flex: 0 1 auto; /* Changed from flex: 1 to allow columns to size based on content */
+  margin-right: 2rem; /* Added margin-right for spacing between columns */
+}
+
+.footer-section {
+  margin-bottom: 1rem;
+}
+
+.footer-section h3 {
+  margin-bottom: 0.5rem;
+}
+
+.footer-section ul {
+  list-style-type: disc; /* Add bullets */
+  padding-left: 1.2rem; /* Add some padding to align bullets */
+  margin: 0;
+}
+
+.footer-section li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-section a {
   color: var(--white);
   text-decoration: none;
-  margin-left: 2rem;
-  transition: color 0.3s ease;
+  display: inline-block; /* This helps with alignment */
+  vertical-align: top; /* Aligns text with the bullet */
 }
 
-.footer-nav a:hover {
-  color: var(--light-blue);
+/* Remove hover effect as requested earlier */
+
+@media screen and (max-width: 768px) {
+  .footer-section ul {
+    display: inline-block; /* Change from flex to inline-block for mobile */
+    text-align: left; /* Align text to the left */
+  }
+
+  .footer-section {
+    text-align: center; /* Keep the section title centered */
+  }
+}
+
+.footer-tagline {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin: 1rem 0;
+  max-width: 300px;
+  line-height: 1.4;
+}
+
+.social-media-links {
+  display: flex;
+  gap: 15px;
+  margin-top: 1rem;
+}
+
+.social-media-links a {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.social-media-links a:hover {
+  transform: scale(1.1);
+}
+
+.social-media-links img {
+  width: 28px;
+  height: 28px;
+  vertical-align: middle;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 2rem;
 }
 
 .footer-copyright {
-  margin-left: 2rem;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Footer Logo Styles */
+.footer-logo img {
+  height: 30px; /* Reduced from 40px to 30px */
+  width: auto;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 1024px) {
+  .footer-content {
+    flex-wrap: wrap;
+  }
+
+  .footer-left,
+  .footer-right {
+    flex: 1 1 100%;
+  }
+
+  .footer-left {
+    margin-right: 0;
+    margin-bottom: 2rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .footer-content,
+  .footer-right {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-left,
+  .footer-right,
+  .footer-column,
+  .footer-section {
+    width: 100%;
+    max-width: 300px;
+    margin-right: 0;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .footer-tagline,
+  .social-media-links {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .footer-section ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-section li {
+    margin-bottom: 0.5rem;
+  }
+
+  .social-media-links {
+    justify-content: center;
+  }
+
+  .footer-logo img {
+    height: 25px; /* Reduced from 35px to 25px for mobile */
+  }
 }
 
 /* Dropdown Styles */
@@ -419,9 +569,9 @@ nav ul li:hover .dropdown-menu {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
-    grid-column: 1 / -1; /* Span all columns */
-    justify-self: center; /* Center horizontally within the grid */
-    width: fit-content; /* Adjust width to content */
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: fit-content;
 }
 
 #load-more:hover {
@@ -449,4 +599,271 @@ nav ul li:hover .dropdown-menu {
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 1rem;
     padding: 1rem;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .button-group {
+    gap: 15px; /* Maintain original gap on mobile */
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .btn-contact, .btn-login {
+    width: 48%; /* Allow some space between buttons */
+    min-width: 0;
+    padding: 0.75rem 1rem;
+  }
+}
+
+.social-media-links {
+  display: flex;
+  gap: 15px; /* Space between icons */
+  margin-top: 1rem;
+}
+
+.social-media-links a {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.social-media-links a:hover {
+  transform: scale(1.1); /* Slightly enlarge icon on hover */
+}
+
+.social-media-links img {
+  width: 28px;
+  height: 28px;
+  vertical-align: middle;
+}
+
+/* Adjust LinkedIn icon size if needed */
+.social-media-links a:last-child img {
+  width: 29px;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .social-media-links {
+    justify-content: center;
+  }
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 1024px) {
+  .footer-content {
+    flex-wrap: wrap;
+  }
+
+  .footer-left,
+  .footer-right {
+    flex: 1 1 100%;
+  }
+
+  .footer-left {
+    margin-right: 0;
+    margin-bottom: 2rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .footer-right {
+    width: 100%;
+    flex-direction: column;
+    gap: 0.5rem; /* Reduced from 1rem to 0.5rem for mobile */
+  }
+
+  .footer-column {
+    width: 100%;
+    margin-bottom: 0.5rem; /* Reduced from 1rem to 0.5rem */
+    margin-right: 0; /* Remove right margin on mobile */
+  }
+
+  .footer-section {
+    margin-bottom: 0.5rem; /* Reduced from 1rem to 0.5rem */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .footer-left {
+    width: 100%;
+    max-width: 300px;
+    margin-right: 0;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .footer-tagline {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Remove any specific alignment for child columns */
+.footer-column:nth-child(1),
+.footer-column:nth-child(2),
+.footer-column:nth-child(3) {
+  align-items: flex-start; /* Change all to flex-start for consistency */
+}
+
+/* Add these styles at the end of your existing CSS file */
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 2rem;
+}
+
+.footer-copyright {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+@media screen and (max-width: 768px) {
+  .footer-bottom {
+    width: 100%;
+    padding: 1rem 0;
+  }
+
+  .footer-copyright {
+    text-align: center;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .footer-content,
+  .footer-right,
+  .footer-left,
+  .footer-column,
+  .footer-section,
+  .footer-section h3,
+  .footer-section ul,
+  .footer-section li,
+  .footer-tagline,
+  .social-media-links,
+  .footer-bottom,
+  .footer-copyright {
+    text-align: left;
+    align-items: flex-start;
+  }
+
+  .footer-content,
+  .footer-bottom {
+    padding: 2rem 1rem;
+  }
+
+  .footer-left,
+  .footer-right,
+  .footer-column,
+  .footer-section,
+  .footer-bottom {
+    width: 100%;
+    max-width: none;
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+
+  .footer-section ul {
+    display: block;
+    padding-left: 1.2rem;
+  }
+
+  .footer-section li {
+    margin-bottom: 0.5rem;
+  }
+
+  .social-media-links {
+    justify-content: flex-start;
+  }
+
+  .footer-tagline,
+  .footer-copyright {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+/* Footer Logo Styles */
+.footer-logo img {
+  height: 30px; /* Reduced from 40px to 30px */
+  width: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .footer-logo img {
+    height: 25px; /* Reduced from 35px to 25px for mobile */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .footer-content,
+  .footer-right,
+  .footer-left,
+  .footer-column,
+  .footer-section,
+  .footer-section h3,
+  .footer-section ul,
+  .footer-section li,
+  .footer-tagline,
+  .social-media-links {
+    text-align: left;
+    align-items: flex-start;
+  }
+
+  .footer-content {
+    padding: 2rem 1rem;
+  }
+
+  .footer-left,
+  .footer-right,
+  .footer-column,
+  .footer-section {
+    width: 100%;
+    max-width: none;
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+
+  .footer-section ul {
+    display: block;
+    padding-left: 1.2rem;
+  }
+
+  .footer-section li {
+    margin-bottom: 0.5rem;
+  }
+
+  .social-media-links {
+    justify-content: flex-start;
+  }
+
+  .footer-tagline {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .footer-content {
+    padding: 1rem 1rem; /* Reduced from 2rem to 1rem */
+  }
+
+  .footer-left,
+  .footer-right,
+  .footer-column,
+  .footer-section,
+  .footer-bottom {
+    margin-bottom: 0.5rem; /* Reduced from 1rem to 0.5rem */
+  }
+
+  .footer-bottom {
+    margin-top: 1rem; /* Reduced from 2rem to 1rem */
+    padding-top: 0.5rem; /* Reduced from 1rem to 0.5rem */
+  }
+
+  .footer-copyright {
+    margin: 0; /* Remove any margin */
+  }
 }
