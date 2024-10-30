@@ -106,6 +106,32 @@ nav a::after {
   transition: width 0.3s ease;
 }
 
+.mobile-nav, #openNavButton{
+  display: none;
+}
+
+@media screen and (max-width: 820px) {
+  /* Mobile Nav */
+  .mobile-nav {
+    position: fixed;
+    transition: 0.4s;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    min-height: 100vh;
+    display: block;
+    z-index: 98;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 32px 20px;
+  }
+  #openNavButton{
+    display: block;
+  }
+}
+
 nav a:hover::after, nav a.active::after {
   width: 100%;
 }
