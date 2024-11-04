@@ -1,3 +1,23 @@
+// Hanmburger menu open
+document.addEventListener("DOMContentLoaded", function () {
+    const openNavButton = document.getElementById("openNavButton");
+    const mobileNav = document.querySelector(".mobile-nav");
+  
+    openNavButton.addEventListener("click", function () {
+      mobileNav.style.transform = "translateX(-100%)";
+    });
+  });
+  
+  // Hanmburger menu close
+  document.addEventListener("DOMContentLoaded", function () {
+    const closeNavButton = document.getElementById("closeNavButton");
+    const mobileNav = document.querySelector(".mobile-nav");
+  
+    closeNavButton.addEventListener("click", function () {
+      mobileNav.style.transform = "translateX(100%)";
+    });
+  });
+
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize lazy loading
     const observer = lozad();
